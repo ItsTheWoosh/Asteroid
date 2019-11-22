@@ -36,5 +36,16 @@ class Ship extends GameObject {
       shotTimer = 0;
     }
     //location.x //this is the new 'x'
+  
+
+  for (int i = 0; i < gameObjects.size(); i++) {
+    GameObject current = gameObjects.get(i);
+    if (current instanceof SpaceRocks) {
+      if (dist(current.location.x, current.location.y, location.x, location.y) < current.size/2 + size/2) {
+        lives --;
+      }
+    }
+  }
+
   }
 }
